@@ -100,6 +100,37 @@
           }
         }
       }
+    },
+    "awaresomeco-carousel": {
+      "projectType": "library",
+      "root": "projects/awaresomeco-carousel",
+      "sourceRoot": "projects/awaresomeco-carousel/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/awaresomeco-carousel/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/awaresomeco-carousel/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/awaresomeco-carousel/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/awaresomeco-carousel/src/test.ts",
+            "tsConfig": "projects/awaresomeco-carousel/tsconfig.spec.json",
+            "karmaConfig": "projects/awaresomeco-carousel/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "awesome-workspace"

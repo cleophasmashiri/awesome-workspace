@@ -2,6 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "awaresomeco-carousel": [
+        "dist/awaresomeco-carousel/awaresomeco-carousel",
+        "dist/awaresomeco-carousel"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
