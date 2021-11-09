@@ -1,0 +1,186 @@
+.mat-icon {
+	font-size: 50px;
+}
+
+title {
+	margin-top: 60px;
+}
+
+.demo-one {
+	height: 800px;
+	background-color: #fff;
+}
+
+.demo-one img {
+	height: 260px;
+	width: 260px;
+}
+
+@media ( max-width : 1000px) {
+	.demo-one {
+		height: 200px;
+	}
+	.demo-one img {
+		width: 200px;
+		height: 200px;
+	}
+}
+
+.demo-two {
+	height: 500px;
+}
+
+.demo-border {
+	padding: 10px 10px 10px 10px;
+	box-sizing: border-box;
+	border: 1px solid;
+	border-color: #CFCFCF;
+	margin-bottom: 20px;
+}
+
+.toggle-box {
+	width: 49%;
+	display: inline-block;
+}
+
+.toggle-box mat-slide-toggle {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 960px) {
+	.toggle-box {
+		width: 100%;
+		display: block;
+	}
+	.demo-content {
+		margin: 16px;
+	}
+}
+
+.content {
+	margin: 50px 70px;
+}
+
+.active {
+	height: calc(260px + 260px) !important;
+	width: calc(260px + 260px) !important;
+}
+
+.carousel {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+.carousel-item {
+	flex-grow: 1;
+	height: 50%;
+	position: relative;
+	top: 116px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	border-radius: 5px; /* 5px rounded corners */
+	text-align: center;
+	margin-right: 10px;
+	height: 260px;
+	width: 260px;
+	min-width: 260px;
+	padding-top: 50px;
+}
+
+.carousel-item.active {
+	flex-grow: 2;
+	height: 100%;
+	position: relative;
+	top: 0px;
+	border-radius: 6px; /* 5px rounded corners */
+	box-shadow: 0 4px 16px 0 rgb(0 0 0/ 16%);
+	border-radius: 8px;
+	border-bottom: 12px solid #f8c000;
+	min-width: 520px;
+}
+
+.active .carousel-content {
+	border: solid 1px #f8f8f8;
+	background-color: #fff;
+	border-radius: 8px;
+	margin-bottom: -8px;
+	display: flex;
+	flex-direction: column;
+	padding: 28px 16px;
+	height: 90%;
+}
+
+.carousel-item.hidden {
+	border: none;
+	box-shadow: none;
+}
+
+.carousel-item .image {
+	width: 100px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.carousel-item.active .image {
+	width: 200px;
+	height: 200px;
+}
+
+.carousel-item .title {
+	font-size: 22px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-bottom: 0;
+}
+
+.carousel-item.active .title {
+	font-size: 32px;
+	font-weight: 500;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding-bottom: 0;
+}
+
+.action {
+	border: none;
+	outline: 0;
+	display: inline-block;
+	padding: 8px;
+	color: #000;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.navigation-icons .right {
+	position: relative;
+	left: 79%;
+	top: 80px;
+	cursor: pointer;
+}
+
+.navigation-icons {
+	z-index: 1000;
+}
+
+.navigation-icons .left {
+	position: relative;
+	left: -85%;
+	top: 80px;
+	cursor: pointer;
+}
+
+.main-title {
+	left: 18%;
+	top: 20%;
+}
+
+.main-title .text {
+	font-weight: bold;
+	font-size: 18px;
+}

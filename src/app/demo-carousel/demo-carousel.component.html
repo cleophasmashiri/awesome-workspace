@@ -1,0 +1,41 @@
+<h3>Demo-carousel</h3>
+<div class="content">
+	<p class="title">Carousel!</p>
+	<div class="demo-border">
+		<awaresomeco-carousel class="demo-one" [drag-scroll-y-disabled]="true"
+			[scrollbar-hidden]="true" (dsInitialized)="onDragScrollInitialized()"
+			(indexChanged)="onIndexChanged($event)"
+			(reachesLeftBound)="leftBoundStat($event)"
+			(reachesRightBound)="rightBoundStat($event)"
+			(snapAnimationFinished)="onSnapAnimationFinished()"
+			(dragStart)="onDragStart()" (dragEnd)="onDragEnd()" #nav>
+
+		<div class="carousel">
+			<div class="carousel-item"
+				*ngFor="let item of carouselItems;let i = index"
+				[ngClass]="{'active': i===index+2, 'hidden': !item.image}"
+				carousel-item>
+				<div class="carousel-content">
+					<div [hidden]="!item?.image">
+						<img [src]="'assets/img/' + item?.image" alt="John" class="image">
+					</div>
+					<div [hidden]="!item?.image" class="title">{{item?.title}}</div>
+					<div *ngIf="i===index+2 && item.image" class="action">
+						<div class="start-here">
+							<span>START HERE ▶︎</span>
+						</div>
+					</div>
+					<div class="navigation-icons" *ngIf="i===index+2 && showNavIcons">
+						<span (click)="moveLeft()" class="left"> <mat-icon
+								class="mat-icon">arrow_circle_left</mat-icon>
+						</span> <span (click)="moveRight()" class="right"> <mat-icon
+								class="mat-icon">arrow_circle_right</mat-icon>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		</awaresomeco-carousel>
+
+	</div>
+</div>

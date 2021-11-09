@@ -1,0 +1,9 @@
+:host {
+    overflow: hidden;
+    display: block;
+  }
+  .drag-scroll-content {
+    height: 100%;
+    overflow: auto;
+    white-space: nowrap;
+}
