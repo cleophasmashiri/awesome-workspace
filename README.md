@@ -1,4 +1,165 @@
-# AwesomeWorkspace
+# Awaresomeco-carousel
+
+## How to get started with Awaresomeco-carousel 
+
+Github: [souce code](https://github.com/cleophasmashiri/awesome-workspace.git).
+
+1. Install [awaresomeco-carousel](
+https://www.npmjs.com/package/@cleophasmashiri1234/awaresomeco-carousel).
+
+```
+npm i @cleophasmashiri1234/awaresomeco-carousel
+
+```
+
+2. Create component: [example](https://github.com/cleophasmashiri/awesome-workspace/tree/master/src/app/demo-carousel).
+
+```
+
+<h3>Demo-carousel</h3>
+<div class="content">
+	<p class="title">Carousel!</p>
+	<div class="demo-border">
+		<awaresomeco-carousel class="demo-one" [drag-scroll-y-disabled]="true"
+			[scrollbar-hidden]="true" (dsInitialized)="onDragScrollInitialized()"
+			(indexChanged)="onIndexChanged($event)"
+			(reachesLeftBound)="leftBoundStat($event)"
+			(reachesRightBound)="rightBoundStat($event)"
+			(snapAnimationFinished)="onSnapAnimationFinished()"
+			(dragStart)="onDragStart()" (dragEnd)="onDragEnd()" #nav>
+
+		<div class="carousel">
+			<div class="carousel-item"
+				*ngFor="let item of carouselItems;let i = index"
+				[ngClass]="{'active': i===index+2, 'hidden': !item.image}"
+				carousel-item>
+				<div class="carousel-content">
+					<div [hidden]="!item?.image">
+						<img [src]="'assets/img/' + item?.image" alt="John" class="image">
+					</div>
+					<div [hidden]="!item?.image" class="title">{{item?.title}}</div>
+					<div *ngIf="i===index+2 && item.image" class="action">
+						<div class="start-here">
+							<span>START HERE ▶︎</span>
+						</div>
+					</div>
+					<div class="navigation-icons" *ngIf="i===index+2 && showNavIcons">
+						<span (click)="moveLeft()" class="left"> <mat-icon
+								class="mat-icon">arrow_circle_left</mat-icon>
+						</span> <span (click)="moveRight()" class="right"> <mat-icon
+								class="mat-icon">arrow_circle_right</mat-icon>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		</awaresomeco-carousel>
+
+	</div>
+</div>
+
+```
+
+3. Add component.ts.
+
+```
+
+
+  @ViewChild('nav', { read: AwaresomecoCarouselComponent, static: true })
+  ds!: AwaresomecoCarouselComponent;
+  showNavIcons: boolean = true;
+
+  constructor(
+    matIconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer
+  ) {
+    matIconRegistry
+      .addSvgIcon('github',
+        sanitizer.bypassSecurityTrustResourceUrl('/assets/img/github.svg'))
+      .registerFontClassAlias('fontawesome', 'fa');
+  }
+
+  ngOnInit() {
+  }
+
+  ngAfterViewInit() {
+    // Starting ngx-drag-scroll from specified index(3)
+    setTimeout(() => {
+      this.ds.moveTo(2);
+    }, 0);
+  }
+
+  clickItem(item: any) {
+    console.log('item clicked');
+  }
+
+  remove() {
+    //this.imagelist.pop();
+  }
+
+  toggleHideSB() {
+    this.hideScrollbar = !this.hideScrollbar;
+  }
+
+  toggleDisable() {
+    this.disabled = !this.disabled;
+  }
+  toggleXDisable() {
+    this.xDisabled = !this.xDisabled;
+  }
+  toggleYDisable() {
+    this.yDisabled = !this.yDisabled;
+  }
+
+  moveLeft() {
+    this.ds.moveLeft();
+  }
+
+  moveRight() {
+    this.ds.moveRight();
+  }
+
+  moveTo(idx: number) {
+    this.ds.moveTo(idx);
+  }
+
+  leftBoundStat(reachesLeftBound: boolean) {
+    this.leftNavDisabled = reachesLeftBound;
+  }
+
+  rightBoundStat(reachesRightBound: boolean) {
+    this.rightNavDisabled = reachesRightBound;
+  }
+
+  onSnapAnimationFinished() {
+    console.log('snap animation finished');
+  }
+
+  onIndexChanged(idx: any) {
+    this.index = idx;
+    this.showNavIcons = false;
+    setTimeout(() => {
+      this.showNavIcons = true;
+    }, 100);
+  }
+
+  onDragScrollInitialized() {
+    console.log('first demo drag scroll has been initialized.');
+  }
+
+  onDragStart() {
+    console.log('drag start');
+  }
+
+  onDragEnd() {
+    console.log('drag end');
+  }
+}
+
+
+```
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
