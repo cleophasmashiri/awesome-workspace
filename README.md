@@ -1,5 +1,7 @@
 # Awaresomeco-carousel
 
+Awaresomeco-carousel enables the quick creation of a carousel types of ui, it handles the navigination and touch/dragging side of the ui whilst leaving the html view and styling to you. 
+
 ## How to get started with Awaresomeco-carousel 
 
 Github: [souce code](https://github.com/cleophasmashiri/awesome-workspace.git).
