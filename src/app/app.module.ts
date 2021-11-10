@@ -9,7 +9,7 @@ import {MatCardModule} from '@angular/material/card';
 import { DemoCarouselComponent } from './demo-carousel/demo-carousel.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
-import { AwaresomecoCarouselModule } from '@cleophasmashiri1234/awaresomeco-carousel';
+import { AwaresomecoCarouselModule } from 'awaresomeco-carousel';
 
 @NgModule({
   declarations: [
