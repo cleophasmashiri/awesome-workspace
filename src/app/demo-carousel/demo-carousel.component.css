@@ -33,8 +33,6 @@ title {
 .demo-border {
 	padding: 10px 10px 10px 10px;
 	box-sizing: border-box;
-	border: 1px solid;
-	border-color: #CFCFCF;
 	margin-bottom: 20px;
 }
 
@@ -183,4 +181,21 @@ title {
 .main-title .text {
 	font-weight: bold;
 	font-size: 18px;
+}
+
+.carousel-title {
+	position: relative;
+	left: 0%;
+	top: -51%;
+	margin-bottom: -40%;
+	text-align: left;
+}
+
+.carousel-title .top {
+
+}
+.carousel-title .bottom {
+	padding-bottom: 10px;
+	font-weight: bold;
+	padding-top: 1px;
 }

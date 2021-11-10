@@ -1,6 +1,5 @@
-<h3>Demo-carousel</h3>
-<div class="content">
-	<p class="title">Carousel!</p>
+<div class="content mat-typography" >
+	<p class="mat-display-3"></p>
 	<div class="demo-border">
 		<awaresomeco-carousel class="demo-one" [drag-scroll-y-disabled]="true"
 			[scrollbar-hidden]="true" (dsInitialized)="onDragScrollInitialized()"
@@ -15,13 +14,17 @@
 				*ngFor="let item of carouselItems;let i = index"
 				[ngClass]="{'active': i===index+2, 'hidden': !item.image}"
 				carousel-item>
+				<div class="carousel-title" *ngIf="i===index+1">
+					<div class="mat-headline top">What are you</div>
+					<div class="mat-headline bottom">here to do</div>
+				</div>
 				<div class="carousel-content">
 					<div [hidden]="!item?.image">
 						<img [src]="'assets/img/' + item?.image" alt="John" class="image">
 					</div>
-					<div [hidden]="!item?.image" class="title">{{item?.title}}</div>
+					<div [hidden]="!item?.image" class="title mat-headline">{{item?.title}}</div>
 					<div *ngIf="i===index+2 && item.image" class="action">
-						<div class="start-here">
+						<div class="start-here mat-headline">
 							<span>START HERE ▶︎</span>
 						</div>
 					</div>
