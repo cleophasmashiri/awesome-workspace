@@ -487,7 +487,6 @@ export class AwaresomecoCarouselComponent implements OnDestroy, AfterViewInit, O
 
       // Append content element to container element.
       this._renderer.appendChild(this.wrapper, this._contentRef.nativeElement);
-
       this.adjustMarginToLastChild();
     }
   }
